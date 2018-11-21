@@ -5,7 +5,7 @@ const Schema = mongoose.Schema;
 const models = require('../models/index');
 
 
-mongoose.Promise = require('bluebird');
+mongoose.Promise = require('bluebird'); // 让mongoose支持promise
 
 // 连接数据库
 mongoose.connect(config.mongodb, {

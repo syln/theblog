@@ -9,6 +9,8 @@ moment.locale("zh-cn");
 
 let User = db.User;
 
+
+// 注册
 router.post('/', function (req, res) {
 
     let name = req.body.name;

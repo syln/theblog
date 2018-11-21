@@ -1,7 +1,6 @@
 const express = require("express");
-const opn = require('opn');
 const router = require('./routes');
-const session = require('express-session');
+const session = require('express-session'); // session
 const MongoStore = require('connect-mongo')(session); //将session保存到mongodb
 const bodyParser = require('body-parser'); //解析body
 const cors = require('cors')
@@ -16,6 +15,7 @@ app.use(bodyParser.urlencoded({
     extended: false
 }));
 
+// 支持跨域
 app.use(cors());
 
 // 通过适当地设置 HTTP 头，保护应用程序避免一些众所周知的 Web 漏洞。

@@ -7,12 +7,14 @@ const db = require('../db/index');
 
 let User = db.User;
 
+// 登录
 router.post('/', function (req, res) {
     let nameOrEmail = req.body.user;
     let password = req.body.password;
 
     let stringReg = new RegExp(nameOrEmail, 'i');
 
+    // 先查询用户名或邮箱
     User.findOne({
         $or: [{
                 name: {

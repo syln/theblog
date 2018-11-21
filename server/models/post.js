@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 const moment = require('moment');
 
 let id = mongoose.Types.ObjectId;
+
 const post = {
     content: {
         type: String,
