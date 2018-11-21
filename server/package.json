@@ -16,5 +16,8 @@
     "mongoose": "^5.3.9",
     "opn": "^5.4.0",
     "sha1": "^1.1.1"
+  },
+  "devDependencies": {
+    "cors": "^2.8.5"
   }
 }

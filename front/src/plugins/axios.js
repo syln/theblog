@@ -8,7 +8,7 @@ let baseUrl;
 
 if (process.env.NODE_ENV == "development") {
   if (process.browser) {
-    baseUrl = "http://172.16.9.54:8000"
+    baseUrl = "http://localhost:8000"
   }
 } else {
   if (process.browser) {

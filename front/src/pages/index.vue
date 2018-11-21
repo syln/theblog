@@ -2,14 +2,14 @@
   <div class="container1">
     <a-row type="flex" justify="space-between" :gutter="30">
       <a-col :span="17" class="main-box">
-        <div class="tweet-box">
-          <textarea class="text-box" placeholder="说点什么" v-model="postContent"></textarea>
+        <div class="tweet-box" v-if="username">
+          <textarea class="text-box" placeholder="说点什么...(ctrl+enter可直接发送）" @keyup.ctrl.13="handlePost" v-model.trim="postContent"></textarea>
           <div style="text-align:right;">
             <a-button :loading="loading" @click="handlePost" :disabled="enablePost">发 布</a-button>
           </div>
         </div>
         <div class="tweet-list">
-          <!-- <Postlist :datalist="postListdata" v-on:emitDelete="handleDeletePost" /> -->
+          <Postlist :datalist="postListdata" v-on:emitDelete="handleDeletePost" />
         </div>
       </a-col>
       <a-col :span="7">
@@ -23,7 +23,7 @@
 import Postlist from "../components/PostList";
 export default {
   components: {
-    // Postlist
+    Postlist
   },
   created() {
     this.$store.dispatch("queryUser");
@@ -52,10 +52,21 @@ export default {
     },
     postListdata() {
       return this.post;
+    },
+    username() {
+      if (
+        this.$store.state.userInfo !== undefined &&
+        this.$store.state.userInfo !== null
+      ) {
+        return this.$store.state.userInfo.name;
+      }
     }
   },
   methods: {
     handlePost() {
+      if(this.postContent == ""){
+        return;
+      }
       this.btnLoading = true;
       this.$store
         .dispatch("home/addPost", {

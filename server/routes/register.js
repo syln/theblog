@@ -27,6 +27,8 @@ router.post('/', function (req, res) {
         updateTime: moment().local()
     }
 
+    console.log(user)
+
     // 用户新增
     User.create(user).then((result) => {
 

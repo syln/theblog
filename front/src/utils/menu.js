@@ -8,9 +8,9 @@ const MENU = [{
     url: '/forum'
   },
   {
-    title: 'X Lab',
-    key: 'lab',
-    url: '/lab'
+    title: '博客',
+    key: 'blog',
+    url: '/blog'
   }
 ]
 

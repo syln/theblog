@@ -4,7 +4,7 @@ const router = require('./routes');
 const session = require('express-session');
 const MongoStore = require('connect-mongo')(session); //将session保存到mongodb
 const bodyParser = require('body-parser'); //解析body
-
+const cors = require('cors')
 const helmet = require('helmet');
 const config = require('./config/config')
 
@@ -16,6 +16,7 @@ app.use(bodyParser.urlencoded({
     extended: false
 }));
 
+app.use(cors());
 
 // 通过适当地设置 HTTP 头，保护应用程序避免一些众所周知的 Web 漏洞。
 app.use(helmet());
@@ -38,4 +39,4 @@ app.use(session({
 
 router(app)
 
-app.listen(8000);
+app.listen(config.port);

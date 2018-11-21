@@ -2,6 +2,7 @@
   <div>
     <ul>
       <template v-for="(v,i) in datalist">
+        <!-- 文章列表待做 -->
         <li class="article-row" :key="i" v-if="v.type !=='post'">
           <a-row type="flex" :gutter="10">
             <a-col :span="2" style="text-align:center">
@@ -9,8 +10,8 @@
             </a-col>
             <a-col :span="22">
               <p class="username">用户名：</p>
-              <a-dropdown :trigger="['click']" placement="bottomCenter" class="r-option">
-                <a class="ant-dropdown-link" href="javascript:;" v-if="v.creator == username">
+              <a-dropdown :trigger="['click']" placement="bottomCenter" class="r-option" v-if="v.creator == username">
+                <a class="ant-dropdown-link" href="javascript:;">
                   <a-icon type="ellipsis" /></a>
                 <a-menu slot="overlay">
                   <a-menu-item key="0">
@@ -53,8 +54,8 @@
             </a-col>
             <a-col :span="22">
               <p class="username">{{v.creator}}：</p>
-              <a-dropdown :trigger="['click']" placement="bottomCenter" class="r-option">
-                <a class="ant-dropdown-link" href="javascript:;" v-if="v.creator == username">
+              <a-dropdown :trigger="['click']" placement="bottomCenter" class="r-option" v-if="v.creator == username">
+                <a class="ant-dropdown-link" href="javascript:;">
                   <a-icon type="ellipsis" /></a>
                 <a-menu slot="overlay">
                   <a-menu-item key="0">
@@ -133,6 +134,8 @@ ul {
       top: 4px;
     }
     .a-box {
+      .content{
+      }
       .option-col {
         a {
           margin-right: 10px;
