@@ -3,7 +3,7 @@
 
 #### 前期环境搭建
 
-node
+node
 
 ```
 官网下载最新稳定版
@@ -24,15 +24,15 @@ mongoDB
 ```
 官网下载最新版本
 
-启动步骤：
-
+启动步骤：
+
 进入到安装目录下
 
 输入命令：
 
-mongod --dbpath ‘输入你的数据库路径’
+mongod --dbpath ‘输入你的数据库路径’
 
-出现一大坨代码，并且没有自动exit，说明启动成功
+出现一大坨代码，并且没有自动exit，说明启动成功
 
 ```
 
@@ -42,7 +42,7 @@ mongoose
 yarn add mongoose
 
 ```
-
+
 
 #### 目录
 
@@ -61,7 +61,7 @@ yarn add mongoose
     + services // 服务
     + static // 第三方资源或插件
     + store  // 状态管理
-    + utils  // 公用资源
+    + utils  // 公用资源
   - nuxt.config.js 配置文件
   - package.json 
 
@@ -70,7 +70,7 @@ yarn add mongoose
 + 后端目录
 
 ```
-+ server
++ server
   + config
     - config.js  // 配置文件
   + db  // 数据库模块
@@ -92,7 +92,7 @@ yarn add mongoose
 - [ ] 主题标签分类
 - [ ] 热门内容排序
 - [ ] 站内信
-- [ ] 消息提醒
+- [ ] 消息提醒
 - [ ] 个人资料设置
 - [ ] 点赞
 - [ ] 评论/回复
